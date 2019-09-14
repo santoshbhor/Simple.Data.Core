@@ -7,7 +7,7 @@
     <PackageId>Simple.Data.Core</PackageId>
     <Company>Simple.Data.Core</Company>
     <Product>Simple.Data.Core</Product>
-    <Description>Internal Verisk 3e Rebuild of Simple.Data.Core for use with .net 461,.net core 2.1 and .net core 3.0 applications</Description>
+    <Description>Rebuild of Simple.Data.Core for use with .net 461,.net core 2.1 and .net core 3.0 applications</Description>
     <Version>1.0.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>

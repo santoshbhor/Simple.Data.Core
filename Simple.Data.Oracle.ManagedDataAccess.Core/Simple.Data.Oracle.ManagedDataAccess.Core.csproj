@@ -10,6 +10,7 @@
     <Product>Simple.Data.Oracle.ManagedDataAccess.Core</Product>
     <Description>Rebuild of Simple.Data.Oracle.ManagedDataAccess for use with .net 461,.net core 2.1 and .net core 3.0 applications</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DefineConstants>$(DefineConstants);MANAGEDODP;</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

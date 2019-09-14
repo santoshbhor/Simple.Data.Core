@@ -19,3 +19,13 @@
 /Simple.Data.Oracle.ManagedDataAccess.Core/Debug
 /Simple.Data.RawSql.Core/Debug
 /Simple.Data.SqlServer.Core/Debug
+/PerformanceTestConsole.Core/bin/Debug
+/PerformanceTestConsole.Core/bin/Release
+/ProfilingApp.Core/bin
+/Simple.Data.Ado.Core/bin
+/Simple.Data.Core/bin
+/Simple.Data.Core/obj
+/Simple.Data.Npgsql.Core/bin
+/Simple.Data.Oracle.ManagedDataAccess.Core/bin
+/Simple.Data.RawSql.Core/bin
+/Simple.Data.SqlServer.Core/bin
