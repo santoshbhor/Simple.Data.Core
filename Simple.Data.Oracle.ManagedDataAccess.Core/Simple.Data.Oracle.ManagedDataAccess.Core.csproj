@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;net461</TargetFrameworks>
+    <AssemblyName>Simple.Data.Oracle.ManagedDataAccess.Core</AssemblyName>
+    <PackageId>Simple.Data.Oracle.ManagedDataAccess.Core</PackageId>
+    <Version>1.0.0.0</Version>
+    <Authors>Simple.Data.Oracle.ManagedDataAccess.Core</Authors>
+    <Company>Simple.Data.Oracle.ManagedDataAccess.Core</Company>
+    <Product>Simple.Data.Oracle.ManagedDataAccess.Core</Product>
+    <Description>Rebuild of Simple.Data.Oracle.ManagedDataAccess for use with .net 461,.net core 2.1 and .net core 3.0 applications</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;MANAGEDODP</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Build\**" />
+    <EmbeddedResource Remove="Build\**" />
+    <None Remove="Build\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ReflectionSql\procedures.txt" />
+    <None Remove="ReflectionSql\procedures_for_schema.txt" />
+    <None Remove="ReflectionSql\procedure_args.txt" />
+    <None Remove="ReflectionSql\schema_columns.txt" />
+    <None Remove="ReflectionSql\table_access_for_schema.txt" />
+    <None Remove="ReflectionSql\table_fks.txt" />
+    <None Remove="ReflectionSql\table_pks.txt" />
+    <None Remove="ReflectionSql\user_columns.txt" />
+    <None Remove="ReflectionSql\user_tables_views.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ReflectionSql\procedures.txt" />
+    <EmbeddedResource Include="ReflectionSql\procedures_for_schema.txt" />
+    <EmbeddedResource Include="ReflectionSql\procedure_args.txt" />
+    <EmbeddedResource Include="ReflectionSql\schema_columns.txt" />
+    <EmbeddedResource Include="ReflectionSql\table_access_for_schema.txt" />
+    <EmbeddedResource Include="ReflectionSql\table_fks.txt" />
+    <EmbeddedResource Include="ReflectionSql\table_pks.txt" />
+    <EmbeddedResource Include="ReflectionSql\user_columns.txt" />
+    <EmbeddedResource Include="ReflectionSql\user_tables_views.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.31" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Data.Ado.Core\Simple.Data.Ado.Core.csproj" />
+    <ProjectReference Include="..\Simple.Data.Core\Simple.Data.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

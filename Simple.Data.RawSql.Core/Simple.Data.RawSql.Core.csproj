@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;net461</TargetFrameworks>
+    <AssemblyName>Simple.Data.RawSql.Core</AssemblyName>
+    <RootNamespace>Simple.Data.RawSql</RootNamespace>
+    <PackageId>Simple.Data.RawSql.Core</PackageId>
+    <Version>1.0.0.0</Version>
+    <Authors>Simple.Data.RawSql.Core</Authors>
+    <Product>Simple.Data.RawSql.Core</Product>
+    <Description>Rebuild of Simple.Data.RawSql for use with .net 461,.net core 2.1 and .net core 3.0 applications</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Data.Ado.Core\Simple.Data.Ado.Core.csproj" />
+    <ProjectReference Include="..\Simple.Data.Core\Simple.Data.Core.csproj" />
+  </ItemGroup>
+
+</Project>

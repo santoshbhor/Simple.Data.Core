@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;net461</TargetFrameworks>
+    <StartupObject>PerformanceTestConsole.Program</StartupObject>
+    <AssemblyName>PerformanceTestConsole</AssemblyName>
+    <RootNamespace>PerformanceTestConsole</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Data.Ado.Core\Simple.Data.Ado.Core.csproj" />
+    <ProjectReference Include="..\Simple.Data.Core\Simple.Data.Core.csproj" />
+    <ProjectReference Include="..\Simple.Data.SqlServer.Core\Simple.Data.SqlServer.Core.csproj" />
+  </ItemGroup>
+
+</Project>

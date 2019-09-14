@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/PerformanceTestConsole.Core/obj
+/ProfilingApp.Core/obj
+/Simple.Data.Ado.Core/obj
+/Simple.Data.Core/.vs/Simple.Data.Core
+/Simple.Data.Npgsql.Core/obj
+/Simple.Data.Oracle.ManagedDataAccess.Core/Build
+/Simple.Data.Oracle.ManagedDataAccess.Core/obj
+/Simple.Data.RawSql.Core/obj
+/Simple.Data.SqlServer.Core/obj
+/PerformanceTestConsole.Core/Debug
+/ProfilingApp.Core/Debug
+/Simple.Data.Ado.Core/Debug
+/Simple.Data.Npgsql.Core/Debug
+/Simple.Data.Oracle.ManagedDataAccess.Core/Debug
+/Simple.Data.RawSql.Core/Debug
+/Simple.Data.SqlServer.Core/Debug

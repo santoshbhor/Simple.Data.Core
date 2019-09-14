@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;net461</TargetFrameworks>
+    <AssemblyName>Simple.Data.Ado.Core</AssemblyName>
+    <RootNamespace>Simple.Data.Ado</RootNamespace>
+    <Version>1.0.0.0</Version>
+    <PackageId>Simple.Data.Ado.Core</PackageId>
+    <Company>Simple.Data.Ado.Core</Company>
+    <Product>Simple.Data.Ado.Core</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Rebuild of Simple.Data.Ado for use with .net core 3.0 applications</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Build\**" />
+    <EmbeddedResource Remove="Build\**" />
+    <None Remove="Build\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simple.Data.Core\Simple.Data.Core.csproj" />
+  </ItemGroup>
+
+</Project>
