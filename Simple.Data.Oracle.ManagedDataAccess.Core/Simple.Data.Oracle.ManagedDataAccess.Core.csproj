@@ -49,8 +49,8 @@
 
   <ItemGroup>
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.31" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.6.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

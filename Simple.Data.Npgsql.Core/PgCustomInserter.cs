@@ -82,8 +82,8 @@ namespace Simple.Data.Npgsql
         var parameter = new NpgsqlParameter
                           {
                             ParameterName = String.Concat("p", idx.ToString()),
-                            Value = value
-                          };
+                            Value = value ?? DBNull.Value
+        };
         cmd.Parameters.Add(parameter);
       }
     }

@@ -99,7 +99,7 @@ namespace Simple.Data.Npgsql
         var parameter = new NpgsqlParameter
                           {
                             ParameterName = string.Concat("p", idx.ToString()),
-                            Value = value
+                            Value = value??DBNull.Value
                           };
         cmd.Parameters.Add(parameter);
       }
