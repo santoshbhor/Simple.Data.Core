@@ -12,16 +12,14 @@ namespace Simple.Data.Ado.Schema
 
         private readonly ProviderHelper _providerHelper;
         private readonly ISchemaProvider _schemaProvider;
-        private readonly Lazy<TableCollection> _lazyTables;
-        private readonly Lazy<ProcedureCollection> _lazyProcedures;
-        private readonly Lazy<Operators> _operators;
+        private Lazy<TableCollection> _lazyTables;
+        private Lazy<ProcedureCollection> _lazyProcedures;
+        private Lazy<Operators> _operators;
         private string _defaultSchema;
 
         private DatabaseSchema(ISchemaProvider schemaProvider, ProviderHelper providerHelper)
         {
-            _lazyTables = new Lazy<TableCollection>(CreateTableCollection);
-            _lazyProcedures = new Lazy<ProcedureCollection>(CreateProcedureCollection);
-            _operators = new Lazy<Operators>(CreateOperators);
+            Refresh();
             _schemaProvider = schemaProvider;
             _providerHelper = providerHelper;
         }
@@ -125,7 +123,7 @@ namespace Simple.Data.Ado.Schema
 
         public static DatabaseSchema Get(IConnectionProvider connectionProvider, ProviderHelper providerHelper)
         {
-            var instance = connectionProvider is ISchemaConnectionProvider 
+            var instance = connectionProvider is ISchemaConnectionProvider
                 ? Instances.GetOrAdd(((ISchemaConnectionProvider)connectionProvider).ConnectionProviderKey, sp => new DatabaseSchema(connectionProvider.GetSchemaProvider(), providerHelper))
                 : Instances.GetOrAdd(connectionProvider.ConnectionString, sp => new DatabaseSchema(connectionProvider.GetSchemaProvider(), providerHelper));
 
@@ -168,6 +166,30 @@ namespace Simple.Data.Ado.Schema
         private Operators CreateOperators()
         {
             return ProviderHelper.GetCustomProvider<Operators>(_schemaProvider) ?? new Operators();
+        }
+
+        public void RefreshTables()
+        {
+            _lazyTables = new Lazy<TableCollection>(CreateTableCollection);
+        }
+
+        public void RefreshProcedures()
+        {
+            _lazyProcedures = new Lazy<ProcedureCollection>(CreateProcedureCollection);
+        }
+
+        public void Refresh()
+        {
+            _lazyTables = new Lazy<TableCollection>(CreateTableCollection);
+            _lazyProcedures = new Lazy<ProcedureCollection>(CreateProcedureCollection);
+            _operators = new Lazy<Operators>(CreateOperators);
+        }
+        public static void RefreshAll()
+        {
+            Instances.All(i => {
+                i.Value.Refresh();
+                return true;
+            });
         }
     }
 
